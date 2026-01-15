@@ -222,4 +222,46 @@ h2{margin:0 0 14px;font-size:28px}
   background: #111;
   color: #fff;
 }
+/* ================================
+   CV ACTION BUTTONS (FIXED)
+================================ */
+
+.cv-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.cv-actions .btn {
+  padding: 14px 26px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+/* PRIMARY */
+.cv-actions .btn.primary {
+  background: #111;
+  color: #fff;
+}
+
+.cv-actions .btn.primary:hover {
+  background: #333;
+  color: #fff;
+}
+
+/* SECONDARY */
+.cv-actions .btn.secondary {
+  background: transparent;
+  border: 2px solid #111;
+  color: #111;              /* 🔥 THIS FIXES IT */
+}
+
+.cv-actions .btn.secondary:hover {
+  background: #111;
+  color: #fff;
+}
 
