@@ -264,4 +264,25 @@ h2{margin:0 0 14px;font-size:28px}
   background: #111;
   color: #fff;
 }
+/* ================================
+   CV SOCIAL ICONS
+================================ */
+
+.cv-socials {
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+}
+
+.cv-socials a {
+  font-size: 22px;
+  color: #111;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.cv-socials a:hover {
+  color: #555;
+  transform: translateY(-3px);
+}
 
