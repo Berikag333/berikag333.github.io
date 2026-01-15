@@ -388,4 +388,64 @@ h2{margin:0 0 14px;font-size:28px}
   color: #111827;
   border-color: #e5e7eb;
 }
+/* Grid alignment for the Projects cards */
+#projects .container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  align-items: stretch;
+}
+
+@media (max-width: 1024px) {
+  #projects .container { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 640px) {
+  #projects .container { grid-template-columns: 1fr; }
+}
+
+/* Make every card same structure and pin buttons to bottom */
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* CTA row pinned to bottom */
+.card .links {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-top: 12px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: transform 0.08s ease, opacity 0.2s ease;
+}
+
+.btn:hover {
+  opacity: 0.95;
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  background: #111827;
+  color: #ffffff;
+}
+
+.btn-secondary {
+  background: #ffffff;
+  color: #111827;
+  border-color: #e5e7eb;
+}
 
