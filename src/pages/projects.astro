@@ -1,0 +1,237 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const projects = [
+  {
+    title: "Marketing Spend Optimization & LTV Analysis",
+    summary:
+      "Evaluated marketing spend effectiveness and customer LTV to identify which acquisition channels drive sustainable growth.",
+    problem:
+      "Which marketing investments deliver the highest long-term value, and how should budget be reallocated to improve ROI?",
+    tools: "Python · Marketing Analytics · LTV · CAC · ROMI · Cohort Analysis",
+    outcome:
+      "Delivered channel-level performance insights and budget optimization recommendations based on LTV/CAC and ROMI.",
+    github:
+      "https://github.com/Berikag333/Marketing-Spend-Optimisation-LTV-Analysis-for-an-Event-Ticketing-Platform",
+  },
+
+  {
+    title: "Experimentation & Revenue Growth (ICE/RICE + A/B Testing)",
+    summary:
+      "Prioritized growth hypotheses using ICE/RICE and evaluated A/B test results to support evidence-based product decisions.",
+    problem:
+      "Which product changes should be tested first, and did the experiment generate a measurable impact on user behavior and revenue?",
+    tools: "Python · A/B Testing · Statistical Analysis · ICE · RICE · Growth Analytics",
+    outcome:
+      "Built a decision-ready experiment readout with statistical conclusions, risks, and recommended next steps.",
+    github:
+      "https://github.com/Berikag333/Experimentation-Revenue-Growth-Analysis-Hypothesis-Prioritisation-A-B-Test",
+  },
+
+  {
+    title: "Customer Churn Prediction & Retention Strategy",
+    summary:
+      "Analyzed customer behavior and contract patterns to predict churn risk and translate insights into retention actions.",
+    problem:
+      "Which customers are at highest risk of churn, and what behaviors drive retention or cancellation?",
+    tools: "Python · Predictive Analytics · Churn Analysis · Data Modeling · Retention Strategy",
+    outcome:
+      "Identified key churn drivers and proposed targeted retention actions to reduce churn and increase long-term value.",
+    github:
+      "https://github.com/Berikag333/Customer-Churn-Prediction-Retention-Strategy-for-a-Fitness-Chain",
+  },
+
+  {
+    title: "Telecom Revenue Optimization: Plan Performance & Statistical Analysis",
+    summary:
+      "Compared telecom plan profitability by analyzing customer usage patterns across calls, SMS, and data.",
+    problem:
+      "Which plan generates higher revenue and why, and are observed differences statistically significant?",
+    tools: "Python · Statistical Analysis · Hypothesis Testing · Revenue Optimization",
+    outcome:
+      "Delivered a plan performance comparison with statistical testing to support pricing and product strategy decisions.",
+    github:
+      "https://github.com/Berikag333/Telecom-Revenue-Optimization-Plan-Performance-Statistical-Analysis",
+  },
+
+  {
+    title: "Video Game Market Intelligence: Sales Drivers & 2017 Launch Strategy",
+    summary:
+      "Identified key drivers of video game sales across platforms, genres, and regions to inform 2017 launch planning.",
+    problem:
+      "What factors influence commercial success, and which segments should be prioritized for a 2017 product launch?",
+    tools: "Python · EDA · Market Analysis · Data Visualization · Business Strategy",
+    outcome:
+      "Mapped demand patterns by region/platform and delivered recommendations for portfolio and launch focus.",
+    github:
+      "https://github.com/Berikag333/Video-Game-Market-Intelligence-Sales-Drivers-2017-Launch-Strategy",
+  },
+
+  {
+    title: "Ride-Hailing Market & Weather Impact Analysis (Chicago)",
+    summary:
+      "Combined operational ride data with weather conditions to uncover demand drivers and usage trends.",
+    problem:
+      "How do weather patterns affect ride demand, trip duration, and market behavior?",
+    tools: "Python · Data Integration · Exploratory Analysis · Business Insights",
+    outcome:
+      "Quantified weather-driven demand shifts to support forecasting, service optimization, and pricing considerations.",
+    github:
+      "https://github.com/Berikag333/Ride-Hailing-Market-Weather-Impact-Analysis-Chicago-",
+  },
+
+  {
+    title: "Product Funnel Diagnostics & A/A/B Experiment Evaluation (Food Delivery App)",
+    summary:
+      "Diagnosed funnel drop-offs and validated an A/A/B experiment to ensure reliability before measuring impact.",
+    problem:
+      "Where are users dropping off in the funnel, and can we trust the experiment results before making decisions?",
+    tools: "Python · Funnel Analysis · A/A & A/B Testing · Statistical Analysis · Product Analytics",
+    outcome:
+      "Identified friction points and delivered an experiment validity check to support confident optimization decisions.",
+    github:
+      "https://github.com/Berikag333/Product-Funnel-Diagnostics-A-A-B-Experiment-Evaluation-Food-Delivery-App-",
+    tableau:
+      "https://public.tableau.com/views/Sprint_12_TendenciasenVideos_EG/DashboardSprint12?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+  },
+
+  {
+    title: "YouTube Trends Intelligence Dashboard for Advertising Strategy",
+    summary:
+      "Built an interactive dashboard to explore YouTube trending patterns across categories, regions, and time.",
+    problem:
+      "Which content trends are emerging, and how can they inform campaign planning and creative strategy?",
+    tools: "Tableau · Dashboard Design · Trend Analysis · Advertising Analytics · Business Insights",
+    outcome:
+      "Created a decision-ready dashboard to guide media planning, creative alignment, and topic selection.",
+    github:
+      "https://github.com/Berikag333/YouTube-Trends-Intelligence-Dashboard-for-Advertising-Strategy",
+    tableau:
+      "https://public.tableau.com/views/Sprint_12_TendenciasenVideos_EG/DashboardSprint12?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+  },
+
+  {
+    title: "Books Market Intelligence: SQL Analysis",
+    summary:
+      "Used SQL to analyze catalog performance, customer ratings, and relationships across books, authors, and publishers.",
+    problem:
+      "What trends exist in catalog performance and audience engagement, and which insights support product decisions?",
+    tools: "SQL · Relational Databases · BI Reporting · Market Analysis · Data Exploration",
+    outcome:
+      "Delivered structured SQL insights to support content strategy, quality evaluation, and data-driven reporting.",
+    github:
+      "https://github.com/Berikag333/Books-Market-Intelligence-SQL-Analysis",
+  },
+];
+---
+
+<BaseLayout title="Projects | Erika González">
+  <section class="projects">
+    <h1>Projects</h1>
+
+    <div class="project-list">
+      {projects.map((p) => (
+        <article class="project-card">
+          <div class="project-header">
+            <h2>{p.title}</h2>
+            <p class="tools-line">{p.tools}</p>
+          </div>
+
+          <div class="project-body">
+            <p><strong>Summary:</strong> {p.summary}</p>
+            <p><strong>Problem:</strong> {p.problem}</p>
+            <p><strong>Outcome:</strong> {p.outcome}</p>
+          </div>
+
+          <div class="project-actions">
+            <a class="btn btn-primary" href={p.github} target="_blank" rel="noopener noreferrer">
+              GitHub
+            </a>
+
+            {p.tableau && (
+              <a class="btn btn-outline" href={p.tableau} target="_blank" rel="noopener noreferrer">
+                Tableau
+              </a>
+            )}
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+.projects {
+  padding-top: 2rem;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.project-list {
+  margin-top: 1.5rem;
+  display: grid;
+  gap: 1.25rem;
+}
+
+.project-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
+  background: #ffffff;
+}
+
+.project-header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.tools-line {
+  margin: 0.35rem 0 0;
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+.project-body {
+  margin-top: 1rem;
+  line-height: 1.65;
+  color: #111827;
+}
+
+.project-body p {
+  margin: 0 0 0.75rem;
+}
+
+.project-actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.1rem;
+  border-radius: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  border: 2px solid transparent;
+}
+
+.btn-primary {
+  background: #111827;
+  color: #fff;
+}
+
+.btn-outline {
+  background: transparent;
+  color: #111827;
+  border-color: #111827;
+}
+
+.btn-primary:hover,
+.btn-outline:hover {
+  transform: translateY(-1px);
+}
+</style>
