@@ -1,8 +1,10 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const cvUrl = "public/cv/Erika-Gonzalez-CV_2.pdf";
+const base = import.meta.env.BASE_URL;
+const cvUrl = `${base}cv/Erika-Gonzalez-CV_2.pdf`;
 ---
+
 
 <BaseLayout title="CV | Erika González">
   <section class="cv-hero">
